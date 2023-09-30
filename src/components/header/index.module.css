@@ -5,12 +5,18 @@
     padding: 0px 12px;
 }
 .backButton{
-
     display: flex;
     width: 48px;
     height: 48px;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+    box-sizing: border-box;
+}
+.backButton:active{
+    background-color: var(--dark-thema-color-white-2);
+}
+.backButton:active path{
+    fill: var(--dark-thema-color-dark-3);
 }
 .currentPageIndicator{
     color: var(--dark-thema-color-white-2);
@@ -18,11 +24,36 @@
     flex: 1;
     height: 48px;
     padding-left: 30px;
-    align-items: center;    
+    align-items: center;
+    user-select: none;    
 }
-.hamburgerMenuButton{
+.barsButtonWrapper{
     display: flex;
+    flex-direction: column;
+    gap: 5px;
     width: 48px;
+    padding: 6px;
     justify-content: center;
     align-items: center;    
+}
+.barsButton{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px;
+}
+.barsButton > div{
+    border-radius: 2px;
+    background-color: var(--dark-thema-color-white-2);
+    width: 24px;
+    height: 3px;    
+}
+.barsButton:hover div{
+    background-color: var(--dark-thema-color-white-1);
+}
+.barsButton:active{
+    background-color: var(--dark-thema-color-white-2);
+}
+.barsButton:active div{
+    background-color: var(--dark-thema-color-dark-3);
 }

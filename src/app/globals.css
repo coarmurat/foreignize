@@ -2,8 +2,9 @@
   --dark-thema-color-dark-1: #111921;
   --dark-thema-color-dark-2: #121B22;
   --dark-thema-color-dark-3: #1F2C34;
+  --dark-thema-color-white-1: #E8EDF2;
   --dark-thema-color-white-2: #AEC6D9;
-  
+  --dark-thema-color-green-2:#008069;
 }
 
 
@@ -13,8 +14,13 @@ body{
   display: flex;
   flex-direction: column;  
 }
-ul,lis{
+a,ul,li,button{
   all: unset;
+  user-select: none;
+  cursor: default;
 }
 
-
+button:focus,a:focus{
+  outline: 1px solid var(--dark-thema-color-white-2);
+  outline-offset: -2px;
+}
