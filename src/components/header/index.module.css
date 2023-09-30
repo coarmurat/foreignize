@@ -1,0 +1,28 @@
+.root{
+    background-color: var(--dark-thema-color-dark-3);
+    display: flex;
+    height: 48px;
+    padding: 0px 12px;
+}
+.backButton{
+
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;    
+}
+.currentPageIndicator{
+    color: var(--dark-thema-color-white-2);
+    display: flex;
+    flex: 1;
+    height: 48px;
+    padding-left: 30px;
+    align-items: center;    
+}
+.hamburgerMenuButton{
+    display: flex;
+    width: 48px;
+    justify-content: center;
+    align-items: center;    
+}
