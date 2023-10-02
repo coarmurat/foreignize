@@ -1,0 +1,6 @@
+.settingsLock{
+    display: flex;
+    width: 27px;
+    justify-content: flex-end;
+    align-items: center;    
+}

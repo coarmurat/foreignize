@@ -13,14 +13,24 @@ body{
   margin: 0;
   display: flex;
   flex-direction: column;  
+  height: 100vh;
 }
 a,ul,li,button{
   all: unset;
   user-select: none;
   cursor: default;
 }
-
+input{
+  background-color: unset;
+  border: unset;
+  outline: unset;
+}
 button:focus,a:focus{
   outline: 1px solid var(--dark-thema-color-white-2);
   outline-offset: -2px;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }

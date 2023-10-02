@@ -18,6 +18,9 @@
 .backButton:active path{
     fill: var(--dark-thema-color-dark-3);
 }
+.backButton:hover path{
+    fill: var(--dark-thema-color-white-1);
+}
 .currentPageIndicator{
     color: var(--dark-thema-color-white-2);
     display: flex;
@@ -41,6 +44,7 @@
     flex-direction: column;
     gap: 5px;
     padding: 6px;
+    border-radius: 2px;
 }
 .barsButton > div{
     border-radius: 2px;
