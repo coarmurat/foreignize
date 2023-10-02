@@ -5,7 +5,22 @@ import { useEffect, useRef } from 'react'
 import typo from '@/typo/index.module.css'
 import { useState } from 'react'
 
-export default function EllipsisMenu({deleteButtonDisabled,updateButtonDisabled,onClickDeleteButton:handleDeleteButtonClick, onClickUpdateButton:handleUpdateButtonClick}:any) {
+interface EllipsisMenuProps{
+  deleteButtonDisabled:boolean,
+  updateButtonDisabled:boolean,
+  onClickDeleteButton:React.MouseEventHandler,
+  onClickUpdateButton:React.MouseEventHandler
+}
+
+export default function EllipsisMenu(
+  {
+    
+    deleteButtonDisabled,
+    updateButtonDisabled,
+    onClickDeleteButton:handleDeleteButtonClick,
+    onClickUpdateButton:handleUpdateButtonClick
+
+  }:EllipsisMenuProps) {
     
     const ellipsisMenuDOMElementRef:{current:HTMLDivElement | null}= useRef(null)
     const [isShowEllipsisMenu, setShowEllipsisMenu] = useState(false)

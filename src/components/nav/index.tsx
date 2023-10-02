@@ -5,10 +5,11 @@ import typo from '@/typo/index.module.css'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { SetStateAction, useEffect } from 'react'
+import Overlay from '@/components/overlay'
 
 interface NavProps {
-    toggle?:boolean,
-    setToggleNav?:React.Dispatch<SetStateAction<boolean>>
+    toggle:boolean,
+    setToggleNav:React.Dispatch<SetStateAction<boolean>>
 }
 
 export default function Nav({ toggle = false, setToggleNav}:NavProps) {
@@ -32,7 +33,7 @@ export default function Nav({ toggle = false, setToggleNav}:NavProps) {
                     <li><Link className={typo.head2} href='/register'> Register </Link></li>
                 </div>
             </ul>
-            <div onClick={ () => setToggleNav ? setToggleNav(() => false):null }></div>
+            <Overlay className={styles.overlay} onClick={ () => setToggleNav ? setToggleNav(() => false):null }/>
         </nav>  
     )
 }

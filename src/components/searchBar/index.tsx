@@ -1,10 +1,22 @@
-"use client"
 import styles from './index.module.css'
 import typo from '@/typo/index.module.css'
 import { Search, Clear } from '@/components/icons'
 
+interface SearchBarProps{
+    searchValue:string,
+    onChangeSearchInput:React.ChangeEventHandler,
+    onClickSearchClearButton:React.MouseEventHandler,
+    onClickSearchButton:React.MouseEventHandler
+}
 
-export default function SettingsLockButton({searchValue, onChangeSearchInput:handleSearchInputChange, onClickSearchClearButton:handleClearButtonClick, onClickSearchButton:handleSearchButtonClick}:any) {
+export default function SearchBar(
+    {   
+        searchValue, 
+        onChangeSearchInput:handleSearchInputChange,
+        onClickSearchClearButton:handleClearButtonClick,
+        onClickSearchButton:handleSearchButtonClick
+
+    }:SearchBarProps) {
     
     return(
         <div className={styles.searchBar}>

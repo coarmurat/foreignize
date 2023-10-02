@@ -38,9 +38,8 @@
     background-color: var(--dark-thema-color-white-1);
     color: var(--dark-thema-color-dark-2);
 }
-.root > div{
-    background-color: #1f2c3480;
-    backdrop-filter: blur(2px);
+.root > .overlay{
+    position: relative;
     flex: 1;
 }
 .primaryLinks{

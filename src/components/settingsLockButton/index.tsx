@@ -1,8 +1,12 @@
-"use client"
 import styles from './index.module.css'
 import { Lock, Unlock } from '@/components/icons'
 
-export default function SettingsLockButton({settingsLock:isSettingsLock, onClick:handleSettingsLockButtonClick}:any) {
+interface SettingsLockButtonProps{
+    settingsLock:boolean,
+    onClick:React.MouseEventHandler
+}
+
+export default function SettingsLockButton({settingsLock:isSettingsLock, onClick:handleSettingsLockButtonClick}:SettingsLockButtonProps){
     
     return(
         <button className={styles.settingsLock} onClick={handleSettingsLockButtonClick}>
