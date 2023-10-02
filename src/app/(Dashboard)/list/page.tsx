@@ -15,7 +15,7 @@ export default function List() {
   const [isCheckedCheckboxSelectAll, toggleCheckboxSelectAll] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   
-  const handleSettingsLockButtonClick = () => toggleSettingsLock( previous => !previous )
+  const handleSettingsLockButtonClick = () => toggleSettingsLock( previous => { toggleCheckboxSelectAll(() => false ); return !previous} )
   const handleCheckboxSelectAllOnChange = () => toggleCheckboxSelectAll( previous => !previous)
   const handleSearchInputOnChange:React.ChangeEventHandler<HTMLInputElement> = (e) => setSearchValue( () => e.target.value )
   const handleClearButtonClick = () => setSearchValue(() => '')
