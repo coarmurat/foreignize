@@ -5,10 +5,10 @@ interface CardProps{
     className?:string
 }
 
-export default function Card({ children, className }:CardProps){
+export default function Card({ children, className = '' }:CardProps){
 
 
     return(        
-        <div className={`${styles.card} ${ Array.isArray(className) ? className.join(' ') : className }`}>{children}</div>
+        <div className={`${ className } ${ styles.card }`} onClick={e => e.stopPropagation()}>{children}</div>
     )
 }

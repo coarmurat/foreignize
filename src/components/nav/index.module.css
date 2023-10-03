@@ -15,7 +15,7 @@
     gap: 24px;
     padding-top: 72px;
     flex-direction: column;
-    min-width: 200px;
+    min-width: 160px;
     max-width: calc(100% - 160px);
     overflow: hidden;
 }

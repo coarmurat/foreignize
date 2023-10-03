@@ -1,0 +1,17 @@
+.button{
+    border-radius: 6px;
+    display: flex;
+    min-width: 100px;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+.primary{
+    background-color: var(--dark-thema-color-green-2);    
+    color: var(--dark-thema-color-white-1);
+}
+.secondary{
+    background-color: var(--dark-thema-color-white-2);    
+    color: var(--dark-thema-color-dark-3);
+}

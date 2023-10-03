@@ -73,3 +73,45 @@
     align-items: center;
     flex: 1 0 0;    
 }
+.overlay{
+    align-items: center;
+    padding: 30px;
+}
+.overlay form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 24px;
+    height: 100%;
+}
+.imageLabel{
+    display: flex;
+    width: 100px;
+}
+
+.imageInputButton{
+    border-radius: 2px;
+    background-color: var(--dark-thema-color-white-1);
+    pointer-events: none;
+    display: flex;
+    padding: 12px 6px;
+    align-items: center;
+    gap: 12px;
+}
+.imageInputButtonText{
+    color: var(--dark-thema-color-green-2);
+}
+.imageInput{
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+.verticalFit{
+    flex: 1;
+}
