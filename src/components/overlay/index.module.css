@@ -1,8 +1,0 @@
-.overlay{
-    display: flex;
-    background-color: var(--dark-thema-color-transparent);
-    position: absolute;
-    inset: 0;
-    backdrop-filter: blur(2px);
-    height: 100vh;
-}

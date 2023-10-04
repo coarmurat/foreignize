@@ -1,25 +1,25 @@
 "use client"
 
 import styles from './page.module.css'
-import typo from '@/typo/index.module.css'
-import { Sort, Add, Checked, Unchecked, Upload } from '@/components/icons'
+import typo from '@/styles/typo/index.module.css'
+import { Sort, Add, Checked, Unchecked } from '@/components/icons'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import SettingsLockButton from '@/components/settingsLockButton'
 import EllipsisMenu from '@/components/ellipsisMenu'
 import SearchBar from '@/components/searchBar'
-import Overlay from '@/components/overlay'
-import FormCard from '@/components/formCard'
-import InputCard from '@/components/inputCard'
-import Button from '@/components/button'
+import AddOrUpdateForm from '@/components/addOrUpdateForm'
 
 export default function List() {
 
   const [isSettingsLock, toggleSettingsLock] = useState(true)
   const [isCheckedCheckboxSelectAll, toggleCheckboxSelectAll] = useState(false)
   const [searchValue, setSearchValue] = useState('')
-  const [currentStep, setCurrentStep] = useState(1)
   const [isAddFormVisible, setAddFormVisible] = useState(false)
+  const [isUpdateFormVisible, setUpdateFormVisible] = useState(false)
+  const [addFormTextFields, setAddFormTextFields] = useState({id:null,image:'',title:'',translatedText:'',text:''})
+  const [updateFormTextFields, setUpdateFormTextFields] = useState({id:null,image:'',title:'',translatedText:'',text:''})
+  
 
   const handleSettingsLockButtonClick = () => toggleSettingsLock(previous => { toggleCheckboxSelectAll(() => false); return !previous })
   const handleCheckboxSelectAllOnChange = () => toggleCheckboxSelectAll(previous => !previous)
@@ -37,11 +37,12 @@ export default function List() {
 
   }
   const handleUpdateButtonClick = () => {
-
+    setAddFormVisible( () => false )
+    setUpdateFormVisible(() => true )
+    console.log(isAddFormVisible,isUpdateFormVisible)
 
   }
   const handleAddButtonClick = () => {
-    setCurrentStep( () => 1 )
     setAddFormVisible( () => true )
 
   }
@@ -83,73 +84,14 @@ export default function List() {
           )))}
         </ul>
       </div>
-      {isAddFormVisible ? 
-      <Overlay className={styles.overlay} onClick={(e) => setAddFormVisible(() => false )}>
-        <FormCard stepCount={5} currentStep={currentStep}>
-          <form>
-            {
-              currentStep === 1 ? (
-                <>
-                  <InputCard className={styles.imageLabel} title='Image' htmlFor='ImageInput'>
-                    <label htmlFor="ImageInput" className={styles.imageInput}>
-                      <button className={`${typo.medium1} ${styles.imageInputButton}`} type='button'>
-                        <div className={styles.imageInputButtonLogo}><Upload /></div>
-                        <div className={styles.imageInputButtonText}>Chooese...</div>
-                      </button>
-                    </label>
-                    <input type='file' id='ImageInput' style={{ display: 'none' }} />
-                  </InputCard>
-                  <div className={styles.buttons} style={{justifyContent:'center'}}>
-                    <Button onClick={() => setCurrentStep( previous => previous += 1)}>Next</Button>
-                  </div>
-                </>
-              ):
-              currentStep === 2 ? (
-                <>
-                  <InputCard title='Title' htmlFor='title'>
-                    <input type='text' id='title' />
-                  </InputCard>
-                  <div className={styles.buttons}>
-                    <Button secondary onClick={() => setCurrentStep( previous => previous -= 1)}>Previous</Button>
-                    <Button onClick={() => setCurrentStep( previous => previous += 1)}>Next</Button>
-                  </div>
-                </>
-              ):
-              currentStep === 3 ? (
-                <>
-                  <InputCard title='Translated Text' htmlFor='translatedText' wrapperClassName={styles.verticalFit}>
-                    <textarea id='translatedText' key={'translatedText'}/>
-                  </InputCard>
-                  <div className={styles.buttons}>
-                    <Button secondary onClick={() => setCurrentStep( previous => previous -= 1)}>Previous</Button>
-                    <Button onClick={() => setCurrentStep( previous => previous += 1)}>Next</Button>
-                  </div>
-                </>
-              ):
-              currentStep === 4 ? (
-                <>
-                  <InputCard title='Text' htmlFor='text' wrapperClassName={styles.verticalFit}>
-                    <textarea id='text' key={'Text'}/>
-                  </InputCard>
-                  <div className={styles.buttons}>
-                    <Button secondary onClick={() => setCurrentStep( previous => previous -= 1)}>Previous</Button>
-                    <Button onClick={() => setCurrentStep( previous => previous += 1)}>Next</Button>
-                  </div>
-                </>
-              ):
-              currentStep === 5 ? (
-                <>
-                  <div>Successfully saved.</div>
-                  <div className={styles.buttons} style={{justifyContent:'center'}}>
-                    <Button secondary onClick={() => setAddFormVisible(() => false )}>Close</Button>
-                  </div>
-                </>
-              ):null
-            }
-          </form>
-        </FormCard>
-      </Overlay>
-      : null }
+      { isAddFormVisible ?
+          <AddOrUpdateForm title="Add" onClose={ () => setAddFormVisible( () => false) } onSubmit={ () => console.log(addFormTextFields) } textFields={addFormTextFields} setTextFields={setAddFormTextFields} action='save' key={'saveForm'}/>
+        :
+        isUpdateFormVisible ? 
+          <AddOrUpdateForm title="Update" onClose={ () => setUpdateFormVisible( () => false) } onSubmit={ () => console.log(updateFormTextFields) } textFields={updateFormTextFields} setTextFields={setUpdateFormTextFields} action='update' key={'updateForm'}/>
+        :null
+      }
+      
     </div>
   )
 }

@@ -17,7 +17,7 @@ body{
   flex-direction: column;  
   height: 100vh;
 }
-a,ul,li,button{
+a,ul,li,button,div{
   all: unset;
   user-select: none;
   cursor: default;
@@ -35,4 +35,7 @@ main{
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+textarea{
+  resize: vertical;
 }

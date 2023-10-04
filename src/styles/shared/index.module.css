@@ -1,0 +1,104 @@
+.overlay{
+  display: flex;
+  background-color: var(--dark-thema-color-transparent);
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(2px);
+  height: 100vh;
+}
+.formOverlay{
+  padding: 0 24px;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  border-radius: 12px;
+  background-color: var(--dark-thema-color-dark-1);    
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+}
+.none{
+  display: none;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 400px;
+  height: 320px;
+  gap: 24px;
+
+}
+.label{
+  color: var(--dark-thema-color-white-1);
+}
+.input{
+  border-radius: 6px;
+  background-color: var(--dark-thema-color-dark-3);
+  color: var(--dark-thema-color-white-1);
+  padding: 6px 12px;
+}
+.text{
+  min-height: 36px;
+  height: fit-content;
+}
+.textarea{
+  flex: 1 0 0;
+}
+.labelInput{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 100px;
+}
+.labelInput > button{
+  border-radius: 2px;
+  background-color: var(--dark-thema-color-white-1);
+  color: var(--dark-thema-color-green-2);
+  display: flex;
+  padding: 12px 6px;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+.inputField{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.flex1{
+  flex: 1;
+}
+.buttonsRow{
+  display: flex;
+  justify-content: space-around;
+}
+.inputsRow{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.button{
+  border-radius: 6px;
+  display: flex;
+  min-width: 80px;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+.primaryButton{
+  background-color: var(--dark-thema-color-green-2);
+  color: var(--dark-thema-color-white-1);
+}
+.secondaryButton{
+  background-color: var(--dark-thema-color-white-2);
+  color: var(--dark-thema-color-dark-3);
+}
+.successRow{
+  color: var(--dark-thema-color-white-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}

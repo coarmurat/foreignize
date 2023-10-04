@@ -2,7 +2,7 @@
 import styles from './index.module.css'
 import { Ellipsis } from '@/components/icons'
 import { useEffect, useRef } from 'react'
-import typo from '@/typo/index.module.css'
+import typo from '@/styles/typo/index.module.css'
 import { useState } from 'react'
 
 interface EllipsisMenuProps{
@@ -63,8 +63,8 @@ export default function EllipsisMenu(
             isShowEllipsisMenu ? 
 
             <div className={styles.items} ref={ellipsisMenuDOMElementRef}>
-                <button className={typo.common} onClick={handleDeleteButtonClick} disabled={deleteButtonDisabled}>Delete</button>
-                <button className={typo.common} onClick={handleUpdateButtonClick} disabled={updateButtonDisabled}>Update</button>
+                <button className={typo.common} onClick={(e) => { setShowEllipsisMenu(() => false); handleDeleteButtonClick(e)}} disabled={deleteButtonDisabled}>Delete</button>
+                <button className={typo.common} onClick={(e) => { setShowEllipsisMenu(() => false); handleUpdateButtonClick(e)}} disabled={updateButtonDisabled}>Update</button>
             </div>
             :
             null

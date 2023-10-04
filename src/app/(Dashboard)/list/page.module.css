@@ -75,7 +75,7 @@
 }
 .overlay{
     align-items: center;
-    padding: 30px;
+    padding: 0 30px;
 }
 .overlay form{
     display: flex;

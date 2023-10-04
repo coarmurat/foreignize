@@ -1,7 +1,7 @@
 "use client"
 
 import styles from './index.module.css'
-import typo from '@/typo/index.module.css'
+import typo from '@/styles/typo/index.module.css'
 
 import { BackButton } from '@/components/icons'
 import Nav from '@/components/nav'

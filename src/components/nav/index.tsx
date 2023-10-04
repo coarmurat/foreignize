@@ -1,11 +1,11 @@
 "use client"
 
 import styles from './index.module.css'
-import typo from '@/typo/index.module.css'
+import sharedStyles from '@/styles/shared/index.module.css'
+import typo from '@/styles/typo/index.module.css'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { SetStateAction, useEffect } from 'react'
-import Overlay from '@/components/overlay'
 
 interface NavProps {
     toggle:boolean,
@@ -33,7 +33,7 @@ export default function Nav({ toggle = false, setToggleNav}:NavProps) {
                     <li><Link className={typo.head2} href='/register'> Register </Link></li>
                 </div>
             </ul>
-            <Overlay className={styles.overlay} onClick={ () => setToggleNav ? setToggleNav(() => false):null }/>
+            <div className={`${sharedStyles.overlay} ${styles.overlay}`} onClick={ () => setToggleNav ? setToggleNav(() => false):null }/>
         </nav>  
     )
 }

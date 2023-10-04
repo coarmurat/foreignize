@@ -1,5 +1,5 @@
 import styles from './index.module.css'
-import typo from '@/typo/index.module.css'
+import typo from '@/styles/typo/index.module.css'
 
 interface ButtonProps extends React.ComponentProps<'button'>{
     primary?:any,
